@@ -485,3 +485,83 @@ Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.1ms | Allocations: 827
 Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2019-09-25 23:33:49 +0500
 Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2019-09-25 23:33:49 +0500
 Started GET "/assets/application.self-f0d704deea029cf000697e2c0181ec173a1b474645466ed843eb5ee7bb215794.css?body=1" for 127.0.0.1 at 2019-09-25 23:33:49 +0500
+Started GET "/posts" for 127.0.0.1 at 2019-09-25 23:40:40 +0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:16
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1078)
+  Rendered layouts/_alerts.html.erb (Duration: 0.5ms | Allocations: 124)
+Completed 200 OK in 28ms (Views: 13.5ms | ActiveRecord: 0.4ms | Allocations: 16443)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2019-09-25 23:40:41 +0500
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.8ms | Allocations: 1428)
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1790)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 24)
+Completed 200 OK in 30ms (Views: 13.0ms | ActiveRecord: 1.2ms | Allocations: 12996)
+
+
+Started POST "/posts" for 127.0.0.1 at 2019-09-25 23:40:46 +0500
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"45k9xmyC79aoF2H1AcGa1KBqXx+hPopaI0KqB8t+kDWvgOmU13DX+my6m1gTIeaq8YBczuroyIpWFT0muulhWw==", "post"=>{"title"=>"gfxfg", "bode"=>"xgffxddxv"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:32:in `block in create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "bode", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "gfxfg"], ["bode", "xgffxddxv"], ["user_id", 1], ["created_at", "2019-09-25 18:40:46.615762"], ["updated_at", "2019-09-25 18:40:46.615762"]]
+  ↳ app/controllers/posts_controller.rb:32:in `block in create'
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:32:in `block in create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 21ms (ActiveRecord: 5.2ms | Allocations: 7313)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2019-09-25 23:40:46 +0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:69:in `set_post'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 310)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 14)
+Completed 200 OK in 22ms (Views: 15.5ms | ActiveRecord: 0.5ms | Allocations: 8308)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2019-09-25 23:42:47 +0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:69:in `set_post'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 274)
+  Rendered layouts/_alerts.html.erb (Duration: 0.3ms | Allocations: 135)
+Completed 200 OK in 18ms (Views: 12.3ms | ActiveRecord: 0.3ms | Allocations: 9299)
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2019-09-25 23:42:47 +0500
+Started GET "/assets/application.self-f0d704deea029cf000697e2c0181ec173a1b474645466ed843eb5ee7bb215794.css?body=1" for 127.0.0.1 at 2019-09-25 23:42:47 +0500
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2019-09-25 23:42:47 +0500
+Started GET "/posts/1" for 127.0.0.1 at 2019-09-25 23:43:49 +0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:69:in `set_post'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:13
+  Rendered posts/show.html.erb within layouts/application (Duration: 13.6ms | Allocations: 7201)
+  Rendered layouts/_alerts.html.erb (Duration: 0.3ms | Allocations: 135)
+Completed 200 OK in 33ms (Views: 24.6ms | ActiveRecord: 0.8ms | Allocations: 16128)
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2019-09-25 23:43:49 +0500
+Started GET "/assets/posts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2019-09-25 23:43:49 +0500
+Started GET "/assets/application.self-f0d704deea029cf000697e2c0181ec173a1b474645466ed843eb5ee7bb215794.css?body=1" for 127.0.0.1 at 2019-09-25 23:43:49 +0500
