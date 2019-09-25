@@ -198,3 +198,87 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.0ms | Allocations: 14023)
 
 
+Started GET "/" for 127.0.0.1 at 2019-09-25 16:46:46 +0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1095)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2459)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Pages#home</h1>
+
+<%= if current_user%>
+  <%= link_to 'Sing out', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'Sing up', new_user_registration_path %>
+  <%= link_to 'Sing in', new_user_session_path %>
+<% end %>
+
+
+
+
+):
+1:    <h1>Pages#home</h1>
+2:    
+3:    <%= if current_user%>
+4:      <%= link_to 'Sing out', destroy_user_session_path, method: :delete %>
+5:    <% else %>
+6:      <%= link_to 'Sing up', new_user_registration_path %>
+7:      <%= link_to 'Sing in', new_user_session_path %>
+8:    <% end %>
+  
+app/views/pages/home.html.erb:3: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/pages/home.html.erb:5: syntax error, unexpected keyword_else, expecting ')'
+app/views/pages/home.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/pages/home.html.erb:5: syntax error, unexpected keyword_else, expecting ')'
+app/views/pages/home.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/pages/home.html.erb:5: syntax error, unexpected keyword_else, expecting ')'
+app/views/pages/home.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/pages/home.html.erb:5: syntax error, unexpected keyword_else, expecting ')'
+app/views/pages/home.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/pages/home.html.erb:5: syntax error, unexpected keyword_else, expecting ')'
+app/views/pages/home.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+app/views/pages/home.html.erb:3: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/pages/home.html.erb:5: syntax error, unexpected keyword_else, expecting ')'
+app/views/pages/home.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+app/views/pages/home.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2019-09-25 16:47:17 +0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.9ms | Allocations: 355)
+  Rendered layouts/_alerts.html.erb (Duration: 1.0ms | Allocations: 135)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 6602)
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2019-09-25 16:47:17 +0500
+Started GET "/assets/application.self-f0d704deea029cf000697e2c0181ec173a1b474645466ed843eb5ee7bb215794.css?body=1" for 127.0.0.1 at 2019-09-25 16:47:17 +0500
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-09-25 16:47:21 +0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 551)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1970)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 24)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 8221)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-09-25 16:47:24 +0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 211)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 80)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1806)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 24)
+Completed 200 OK in 25ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 7588)
+
+
